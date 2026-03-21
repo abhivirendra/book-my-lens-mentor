@@ -13,7 +13,8 @@ const Index = () => {
       <TestimonialsSection />
       <BookingSection />
       <footer className="py-8 px-6 text-center text-muted-foreground text-xs tracking-wide border-t border-border">
-        © {new Date().getFullYear()} — Photography Mentorship. All rights reserved.
+        <p>© {new Date().getFullYear()} Abhishek Virendra Photography. All rights reserved.</p>
+        <p className="mt-1">A Lay Man Approach Towards Photography™</p>
       </footer>
     </main>
   );

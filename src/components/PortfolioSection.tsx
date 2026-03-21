@@ -5,8 +5,8 @@ import useScrollReveal from "@/hooks/useScrollReveal";
 
 const stats = [
   { number: "9+", label: "Years Mentoring" },
-  { number: "340+", label: "Students Guided" },
-  { number: "27", label: "Countries Reached" },
+  { number: "3,000+", label: "Students Mentored" },
+  { number: "200+", label: "Live Workshops" },
 ];
 
 const PortfolioSection = () => {
@@ -21,13 +21,13 @@ const PortfolioSection = () => {
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
           <div className="row-span-2">
-            <img src={portfolio1} alt="Landscape at golden hour" className="w-full h-full object-cover" />
+            <img src={portfolio1} alt="Landscape photography by Abhishek Virendra" className="w-full h-full object-cover" />
           </div>
           <div className="col-span-1">
-            <img src={portfolio2} alt="Dramatic portrait" className="w-full h-full object-cover" />
+            <img src={portfolio2} alt="Portrait photography" className="w-full h-full object-cover" />
           </div>
           <div className="col-span-1">
-            <img src={portfolio3} alt="Night street photography" className="w-full h-full object-cover" />
+            <img src={portfolio3} alt="Street photography" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>
