@@ -10,12 +10,6 @@ import ipwLighttrails from "@/assets/ipw-lighttrails.jpg";
 import abhishekLecture from "@/assets/abhishek-lecture.jpg";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
-const stats = [
-  { number: "9+", label: "Years Mentoring" },
-  { number: "3,000+", label: "Students Mentored" },
-  { number: "200+", label: "Live Workshops" },
-];
-
 const galleryImages = [
   // Row 1: 3 single cells
   { src: portfolioFashion, alt: "Black and white fashion portrait by Abhishek Virendra — editorial photography", span: "" },
@@ -35,7 +29,6 @@ const galleryImages = [
 
 const PortfolioSection = () => {
   const ref1 = useScrollReveal();
-  const ref2 = useScrollReveal();
 
   return (
     <section className="py-24 md:py-32 px-6 md:px-12 bg-card">
@@ -56,21 +49,9 @@ const PortfolioSection = () => {
           ))}
         </div>
       </div>
-
-      <div ref={ref2} className="max-w-4xl mx-auto grid grid-cols-3 gap-8 text-center border-t border-border pt-16">
-        {stats.map((stat) => (
-          <div key={stat.label}>
-            <p className="font-display text-4xl md:text-6xl font-bold text-primary tracking-tight">
-              {stat.number}
-            </p>
-            <p className="text-muted-foreground text-sm mt-2 tracking-wide uppercase">
-              {stat.label}
-            </p>
-          </div>
-        ))}
-      </div>
     </section>
   );
 };
 
 export default PortfolioSection;
+
