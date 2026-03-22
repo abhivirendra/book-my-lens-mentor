@@ -35,9 +35,9 @@ const PortfolioSection = () => {
         <p className="text-primary text-sm font-medium tracking-[0.2em] uppercase mb-6">
           The Work & Workshops
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-[250px] md:auto-rows-[300px] gap-3 md:gap-4">
           {galleryImages.map((img) => (
-            <div key={img.alt} className={img.span}>
+            <div key={img.alt} className={`${img.span} overflow-hidden`}>
               <img
                 src={img.src}
                 alt={img.alt}
