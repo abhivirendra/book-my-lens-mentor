@@ -1,7 +1,16 @@
+import { useState, useEffect } from "react";
 import heroImage from "@/assets/hero-mentor.jpg";
-import { Camera, Phone, Mail } from "lucide-react";
+import { Camera, Phone } from "lucide-react";
 
 const HeroSection = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const scrollToBooking = () => {
     document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -17,16 +26,22 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/20" />
       </div>
 
-      <nav className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 md:px-12 py-6">
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 transition-all duration-300 ${
+          scrolled
+            ? "bg-background/95 backdrop-blur-md shadow-[0_1px_3px_hsl(0,0%,0%/0.08)]"
+            : "bg-transparent"
+        }`}
+      >
         <div className="flex items-center gap-2">
           <Camera className="w-5 h-5 text-primary" />
-          <span className="font-display text-lg tracking-tight">AV Photography</span>
+          <span className="font-display text-lg tracking-tight text-foreground">AV Photography</span>
         </div>
         <div className="flex items-center gap-6">
-          <a href="#services" className="hidden md:block text-muted-foreground text-sm hover:text-foreground transition-colors tracking-wide">Services</a>
-          <a href="#portfolio" className="hidden md:block text-muted-foreground text-sm hover:text-foreground transition-colors tracking-wide">Work</a>
-          <a href="#booking" className="hidden md:block text-muted-foreground text-sm hover:text-foreground transition-colors tracking-wide">Contact</a>
-          <a href="tel:+919606766511" className="hidden md:flex items-center gap-2 text-muted-foreground text-sm hover:text-foreground transition-colors">
+          <a href="#services" className="hidden md:block text-foreground/70 text-sm hover:text-foreground transition-colors tracking-wide">Services</a>
+          <a href="#portfolio" className="hidden md:block text-foreground/70 text-sm hover:text-foreground transition-colors tracking-wide">Work</a>
+          <a href="#booking" className="hidden md:block text-foreground/70 text-sm hover:text-foreground transition-colors tracking-wide">Contact</a>
+          <a href="tel:+919606766511" className="hidden md:flex items-center gap-2 text-foreground/70 text-sm hover:text-foreground transition-colors">
             <Phone className="w-4 h-4" />
             +91 96067 66511
           </a>
