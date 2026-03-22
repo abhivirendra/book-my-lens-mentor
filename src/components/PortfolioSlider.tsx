@@ -30,7 +30,7 @@ const slides = [
 ];
 
 const PortfolioSlider = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center", duration: 35, dragFree: false });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
