@@ -47,7 +47,7 @@ const HeroSection = () => {
           A Lay Man Approach <em className="font-normal">Towards Photography</em>
         </h1>
         <p className="text-muted-foreground text-lg md:text-xl max-w-xl leading-relaxed mb-8">
-          9+ years of mentoring. 3,000+ students guided. Learn photography the way it was meant to be learned — simply, passionately, brilliantly.
+          Learn photography the way it was meant to be learned — simply, passionately, brilliantly.
         </p>
         <button
           onClick={scrollToBooking}
