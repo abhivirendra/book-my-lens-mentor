@@ -10,11 +10,13 @@ import sliderBwPortrait from "@/assets/slider-bw-portrait.jpg";
 import sliderBeauty from "@/assets/slider-beauty.jpg";
 import sliderBwCloseup from "@/assets/slider-bw-closeup.jpg";
 import sliderStreetFashion from "@/assets/slider-street-fashion.jpg";
+import sliderBwEditorial from "@/assets/slider-bw-editorial.jpg";
 
 const slides = [
   { src: sliderStreetFashion, alt: "Street fashion portrait — leather jacket against red wall", caption: "Street Fashion" },
   { src: sliderGelLight, alt: "Gel lighting portrait — blue and red creative lighting", caption: "Creative Lighting" },
   { src: sliderBeauty, alt: "Beauty portrait — natural light studio photography", caption: "Beauty" },
+  { src: sliderBwEditorial, alt: "Black and white editorial fashion portrait", caption: "Editorial B&W" },
   { src: sliderBwPortrait, alt: "Black and white self-portrait — Abhishek Virendra", caption: "Portraiture" },
   { src: sliderFashion1, alt: "Fashion portrait — editorial studio photography", caption: "Editorial" },
   { src: sliderCreativeBulb, alt: "Creative still life — light bulb with color ink in water", caption: "Creative" },
