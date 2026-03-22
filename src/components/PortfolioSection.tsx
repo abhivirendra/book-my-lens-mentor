@@ -17,14 +17,18 @@ const stats = [
 ];
 
 const galleryImages = [
-  { src: portfolioFashion, alt: "Black and white fashion portrait by Abhishek Virendra — editorial photography", span: "row-span-2" },
+  // Row 1: 3 single cells
+  { src: portfolioFashion, alt: "Black and white fashion portrait by Abhishek Virendra — editorial photography", span: "" },
   { src: workshopStudents, alt: "iPW students learning photography during a live workshop", span: "" },
   { src: portfolio1, alt: "Flamingo wildlife photography by Abhishek Virendra — iPW branded", span: "" },
-  { src: workshopBatch, alt: "iPW photography workshop batch with Abhishek Virendra — students in yellow iPW shirts", span: "col-span-2 md:col-span-2" },
+  // Row 2: 1 wide + 1 single
+  { src: workshopBatch, alt: "iPW photography workshop batch with Abhishek Virendra — students in yellow iPW shirts", span: "col-span-2" },
   { src: portfolio2, alt: "Fashion photography shoot directed by Abhishek Virendra", span: "" },
+  // Row 3: 1 single + 1 wide
   { src: workshopBanner, alt: "iPW Basic Photography Workshop at Bangalore — creative light bulb art", span: "" },
+  { src: ipwLighttrails, alt: "Light trail long exposure photography — iPW branded work by Abhishek Virendra", span: "col-span-2" },
+  // Row 4: 3 single cells
   { src: abhishekLecture, alt: "Abhishek Virendra delivering a photography lecture at iPW workshop", span: "" },
-  { src: ipwLighttrails, alt: "Light trail long exposure photography — iPW branded work by Abhishek Virendra", span: "col-span-2 md:col-span-2" },
   { src: workshopGroup, alt: "Full batch of iPW photography workshop students — group photo", span: "" },
   { src: portfolio3, alt: "Abhishek Virendra mentoring students with hands-on camera guidance", span: "" },
 ];
@@ -39,7 +43,7 @@ const PortfolioSection = () => {
         <p className="text-primary text-sm font-medium tracking-[0.2em] uppercase mb-6">
           The Work & Workshops
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-[250px] md:auto-rows-[300px] gap-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-[220px] md:auto-rows-[280px] gap-3 md:gap-4">
           {galleryImages.map((img) => (
             <div key={img.alt} className={`${img.span} overflow-hidden`}>
               <img
