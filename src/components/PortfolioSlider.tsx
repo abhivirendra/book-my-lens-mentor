@@ -70,11 +70,11 @@ const PortfolioSlider = () => {
                   className="flex-[0_0_85%] md:flex-[0_0_70%] min-w-0 pl-4 first:pl-0 transition-opacity duration-500"
                   style={{ opacity: selectedIndex === i ? 1 : 0.4 }}
                 >
-                  <div className="relative aspect-[3/4] md:aspect-[16/10] overflow-hidden rounded-sm">
+                  <div className="relative h-[70vh] md:h-[75vh] flex items-center justify-center overflow-hidden rounded-sm bg-black/20">
                     <img
                       src={slide.src}
                       alt={slide.alt}
-                      className="w-full h-full object-cover"
+                      className="max-w-full max-h-full object-contain"
                       loading="lazy"
                     />
                     <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
