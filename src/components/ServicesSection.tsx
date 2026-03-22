@@ -47,19 +47,6 @@ const ServicesSection = () => {
             </div>
           ))}
         </div>
-
-        <div className="flex items-center justify-center gap-16 md:gap-24 border-t border-border pt-14">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="font-display text-4xl md:text-5xl font-bold text-primary tracking-tight">
-                {stat.number}
-              </p>
-              <p className="text-muted-foreground text-sm mt-2 tracking-wide uppercase">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
