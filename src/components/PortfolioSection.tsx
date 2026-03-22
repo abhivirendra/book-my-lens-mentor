@@ -6,6 +6,8 @@ import workshopStudents from "@/assets/workshop-students.jpg";
 import workshopGroup from "@/assets/workshop-group.jpg";
 import workshopBanner from "@/assets/workshop-banner.jpg";
 import workshopBatch from "@/assets/workshop-batch.jpg";
+import ipwLighttrails from "@/assets/ipw-lighttrails.jpg";
+import abhishekLecture from "@/assets/abhishek-lecture.jpg";
 import useScrollReveal from "@/hooks/useScrollReveal";
 
 const stats = [
@@ -21,7 +23,9 @@ const galleryImages = [
   { src: workshopBatch, alt: "iPW photography workshop batch with Abhishek Virendra — students in yellow iPW shirts", span: "col-span-2 md:col-span-2" },
   { src: portfolio2, alt: "Fashion photography shoot directed by Abhishek Virendra", span: "" },
   { src: workshopBanner, alt: "iPW Basic Photography Workshop at Bangalore — creative light bulb art", span: "" },
-  { src: workshopGroup, alt: "Full batch of iPW photography workshop students — group photo", span: "col-span-2 md:col-span-1" },
+  { src: abhishekLecture, alt: "Abhishek Virendra delivering a photography lecture at iPW workshop", span: "" },
+  { src: ipwLighttrails, alt: "Light trail long exposure photography — iPW branded work by Abhishek Virendra", span: "col-span-2 md:col-span-2" },
+  { src: workshopGroup, alt: "Full batch of iPW photography workshop students — group photo", span: "" },
   { src: portfolio3, alt: "Abhishek Virendra mentoring students with hands-on camera guidance", span: "" },
 ];
 
