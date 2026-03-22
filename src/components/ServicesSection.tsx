@@ -11,10 +11,6 @@ const services = [
   { icon: Users, name: "Kids Natural Shoots", description: "Candid, joyful moments of childhood wonder" },
 ];
 
-const stats = [
-  { number: "51+", label: "Shoots Completed" },
-  { number: "7", label: "Ongoing Projects" },
-];
 
 const ServicesSection = () => {
   const ref1 = useScrollReveal();
