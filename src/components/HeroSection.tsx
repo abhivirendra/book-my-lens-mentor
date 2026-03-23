@@ -1,9 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import heroImage from "@/assets/hero-mentor.jpg";
-import { Camera, Phone } from "lucide-react";
+import { Camera, Phone, ChevronDown } from "lucide-react";
+
+const services = [
+  "Glamour Photography",
+  "Portrait Photography",
+  "Personal Photography",
+  "Event Photography",
+  "Pre-Wedding Photography",
+  "Maternity Shoots",
+  "Kids Natural Shoots",
+];
 
 const HeroSection = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -11,7 +23,21 @@ const HeroSection = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollToBooking = () => {
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const scrollToBooking = (service?: string) => {
+    if (service) {
+      window.dispatchEvent(new CustomEvent("prefill-service", { detail: service }));
+    }
+    setDropdownOpen(false);
     document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -38,7 +64,29 @@ const HeroSection = () => {
           <span className="font-display text-lg tracking-tight text-foreground">AV Photography</span>
         </div>
         <div className="flex items-center gap-6">
-          <a href="#services" className="hidden md:block text-foreground/70 text-sm hover:text-foreground transition-colors tracking-wide">Services</a>
+          {/* Services Dropdown */}
+          <div ref={dropdownRef} className="relative hidden md:block">
+            <button
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="flex items-center gap-1 text-foreground/70 text-sm hover:text-foreground transition-colors tracking-wide"
+            >
+              Services
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`} />
+            </button>
+            {dropdownOpen && (
+              <div className="absolute top-full mt-2 right-0 w-56 bg-card/95 backdrop-blur-md border border-border rounded-sm shadow-lg py-2 animate-fade-up">
+                {services.map((service) => (
+                  <button
+                    key={service}
+                    onClick={() => scrollToBooking(service)}
+                    className="w-full text-left px-4 py-2.5 text-sm text-foreground/80 hover:text-foreground hover:bg-primary/10 transition-colors"
+                  >
+                    {service}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
           <a href="#portfolio" className="hidden md:block text-foreground/70 text-sm hover:text-foreground transition-colors tracking-wide">Work</a>
           <a href="#booking" className="hidden md:block text-foreground/70 text-sm hover:text-foreground transition-colors tracking-wide">Contact</a>
           <a href="tel:+919606766511" className="hidden md:flex items-center gap-2 text-foreground/70 text-sm hover:text-foreground transition-colors">
@@ -46,7 +94,7 @@ const HeroSection = () => {
             +91 96067 66511
           </a>
           <button
-            onClick={scrollToBooking}
+            onClick={() => scrollToBooking()}
             className="bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium tracking-wide uppercase hover:opacity-90 transition-opacity active:scale-[0.97]"
           >
             Book Now
@@ -65,7 +113,7 @@ const HeroSection = () => {
           Learn photography the way it was meant to be learned — simply, passionately, brilliantly.
         </p>
         <button
-          onClick={scrollToBooking}
+          onClick={() => scrollToBooking()}
           className="bg-primary text-primary-foreground px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase hover:opacity-90 transition-opacity active:scale-[0.97]"
         >
           Get a Chance to Work With Me

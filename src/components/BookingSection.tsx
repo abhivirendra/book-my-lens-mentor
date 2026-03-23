@@ -1,12 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useScrollReveal from "@/hooks/useScrollReveal";
 import { ArrowRight, Mail, Phone, MapPin, Instagram } from "lucide-react";
 import { toast } from "sonner";
 
+const serviceOptions = [
+  "Glamour Photography",
+  "Portrait Photography",
+  "Personal Photography",
+  "Event Photography",
+  "Pre-Wedding Photography",
+  "Maternity Shoots",
+  "Kids Natural Shoots",
+];
+
 const BookingSection = () => {
   const ref = useScrollReveal();
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", service: "", message: "" });
   const [sending, setSending] = useState(false);
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const service = (e as CustomEvent).detail;
+      setForm((prev) => ({ ...prev, service, message: prev.message || `I'm interested in ${service}.` }));
+    };
+    window.addEventListener("prefill-service", handler);
+    return () => window.removeEventListener("prefill-service", handler);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,9 +34,9 @@ const BookingSection = () => {
       return;
     }
     setSending(true);
-    const subject = encodeURIComponent("Photography Inquiry from " + form.name.trim());
+    const subject = encodeURIComponent("Photography Inquiry from " + form.name.trim() + (form.service ? ` — ${form.service}` : ""));
     const body = encodeURIComponent(
-      `Name: ${form.name.trim()}\nEmail: ${form.email.trim()}\n\n${form.message.trim()}`
+      `Name: ${form.name.trim()}\nEmail: ${form.email.trim()}\nService: ${form.service || "Not specified"}\n\n${form.message.trim()}`
     );
     window.location.href = `mailto:abhishekvirendra@gmail.com?subject=${subject}&body=${body}`;
     setTimeout(() => {
@@ -123,6 +142,19 @@ const BookingSection = () => {
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 className="w-full bg-background border border-border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring rounded-sm"
               />
+            </div>
+            <div>
+              <label className="block text-sm font-medium mb-2">Service</label>
+              <select
+                value={form.service}
+                onChange={(e) => setForm({ ...form, service: e.target.value })}
+                className="w-full bg-background border border-border px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring rounded-sm appearance-none"
+              >
+                <option value="">Select a service</option>
+                {serviceOptions.map((s) => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
             </div>
             <div>
               <label className="block text-sm font-medium mb-2">Message</label>
