@@ -4,13 +4,13 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     text: "Abhishek's layman approach completely changed how I see photography. Within weeks, I stopped worrying about gear and started focusing on what truly matters — the story in every frame.",
-    name: "Priya Nair",
-    role: "Landscape Photographer, Bangalore",
+    name: "Priya Shetty",
+    role: "Bangalore",
   },
   {
     text: "His workshops are unlike anything else in India. The way he simplifies complex techniques and makes you experiment fearlessly — that's what sets him apart from every other mentor out there.",
-    name: "Karthik Raman",
-    role: "Fashion Photographer, Chennai",
+    name: "Rajeev Dikhshit",
+    role: "",
   },
 ];
 
