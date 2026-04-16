@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import HeroSection from "@/components/HeroSection";
 import PhilosophySection from "@/components/PhilosophySection";
 import PortfolioSlider from "@/components/PortfolioSlider";
@@ -8,6 +9,12 @@ import BookingSection from "@/components/BookingSection";
 
 const Index = () => {
   const whatsappUrl = "https://wa.me/919019766511?text=Hi%20Abhishek%2C%20I%27m%20interested%20in%20your%20photography%20services.";
+  const [showLabels, setShowLabels] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowLabels(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <main className="min-h-screen">
@@ -39,7 +46,7 @@ const Index = () => {
             <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
           </svg>
-          <span className="absolute right-16 whitespace-nowrap bg-primary text-primary-foreground text-xs font-semibold px-3 py-1.5 rounded shadow-lg pointer-events-none animate-fade-up">
+          <span className={`absolute right-16 whitespace-nowrap bg-primary text-primary-foreground text-xs font-semibold px-3 py-1.5 rounded shadow-lg pointer-events-none transition-opacity duration-700 ${showLabels ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}>
             Photography Workshop for Employees
           </span>
         </a>
@@ -58,7 +65,7 @@ const Index = () => {
             <line x1="9" y1="9" x2="9.01" y2="9" />
             <line x1="15" y1="9" x2="15.01" y2="9" />
           </svg>
-          <span className="absolute right-16 whitespace-nowrap bg-accent text-accent-foreground text-xs font-semibold px-3 py-1.5 rounded shadow-lg pointer-events-none animate-fade-up">
+          <span className={`absolute right-16 whitespace-nowrap bg-accent text-accent-foreground text-xs font-semibold px-3 py-1.5 rounded shadow-lg pointer-events-none transition-opacity duration-700 ${showLabels ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}>
             Photography Workshop for Kids
           </span>
         </a>
