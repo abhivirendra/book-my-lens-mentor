@@ -7,7 +7,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import BookingSection from "@/components/BookingSection";
 
 const Index = () => {
-  const whatsappUrl = "https://wa.me/919606766511?text=Hi%20Abhishek%2C%20I%27m%20interested%20in%20your%20photography%20services.";
+  const whatsappUrl = "https://wa.me/919019766511?text=Hi%20Abhishek%2C%20I%27m%20interested%20in%20your%20photography%20services.";
 
   return (
     <main className="min-h-screen">

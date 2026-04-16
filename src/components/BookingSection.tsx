@@ -74,8 +74,8 @@ const BookingSection = () => {
               {
                 icon: Phone,
                 label: "Phone",
-                value: "+91 96067 66511",
-                href: "tel:+919606766511",
+                value: "+91 90197 66511",
+                href: "tel:+919019766511",
               },
               {
                 icon: MapPin,

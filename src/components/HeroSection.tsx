@@ -89,9 +89,9 @@ const HeroSection = () => {
           </div>
           <a href="#portfolio" className="hidden md:block text-foreground/70 text-sm hover:text-foreground transition-colors tracking-wide">Work</a>
           <a href="#booking" className="hidden md:block text-foreground/70 text-sm hover:text-foreground transition-colors tracking-wide">Contact</a>
-          <a href="tel:+919606766511" className="hidden md:flex items-center gap-2 text-foreground/70 text-sm hover:text-foreground transition-colors">
+          <a href="tel:+919019766511" className="hidden md:flex items-center gap-2 text-foreground/70 text-sm hover:text-foreground transition-colors">
             <Phone className="w-4 h-4" />
-            +91 96067 66511
+            +91 90197 66511
           </a>
           <button
             onClick={() => scrollToBooking()}
@@ -116,7 +116,7 @@ const HeroSection = () => {
           onClick={() => scrollToBooking()}
           className="bg-primary text-primary-foreground px-8 py-4 text-sm font-semibold tracking-[0.15em] uppercase hover:opacity-90 transition-opacity active:scale-[0.97]"
         >
-          Get a Chance to Work With Me
+          Turn Your Passion Into Profit
         </button>
       </div>
     </section>
