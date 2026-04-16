@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import HeroSection from "@/components/HeroSection";
 import PhilosophySection from "@/components/PhilosophySection";
 import PortfolioSlider from "@/components/PortfolioSlider";
@@ -8,6 +9,12 @@ import BookingSection from "@/components/BookingSection";
 
 const Index = () => {
   const whatsappUrl = "https://wa.me/919019766511?text=Hi%20Abhishek%2C%20I%27m%20interested%20in%20your%20photography%20services.";
+  const [showLabels, setShowLabels] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowLabels(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <main className="min-h-screen">
