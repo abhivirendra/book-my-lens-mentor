@@ -26,7 +26,7 @@ const BookMyShowDangler = () => {
           </div>
           <div className="p-3">
             <p className="font-display text-sm md:text-[15px] leading-tight text-foreground mb-2">
-              Book your photographer in one call
+              Your search ends here
             </p>
             <div className="flex items-center gap-1.5 text-[12px] text-foreground mb-2.5">
               <Phone className="w-3.5 h-3.5 text-primary" />
