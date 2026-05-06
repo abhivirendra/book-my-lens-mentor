@@ -21,7 +21,7 @@ const BookMyShowDangler = () => {
           className="mt-1 block w-[180px] md:w-[210px] bg-card border border-border rounded-md shadow-2xl overflow-hidden hover:scale-105 transition-transform duration-300"
         >
           <div className="bg-[hsl(var(--primary))] text-primary-foreground px-3 py-1.5 text-[10px] font-bold tracking-[0.15em] uppercase flex items-center justify-between">
-            <span>bookyourshow now</span>
+            <span>book photographer</span>
             <span className="text-[9px] opacity-80">LIVE</span>
           </div>
           <div className="p-3">
