@@ -1,13 +1,7 @@
-import { Calendar, MapPin, X } from "lucide-react";
-import { useState } from "react";
+import { Phone } from "lucide-react";
 
 const BookMyShowDangler = () => {
-  const [open, setOpen] = useState(false);
-  const eventUrl = "https://in.bookmyshow.com/events/basic-photography-webinar-a-layman-approach/ET00308511";
-
-  if (!open === false && open) {
-    // placeholder
-  }
+  const phone = "9019766511";
 
   return (
     <div className="fixed top-16 right-6 md:right-24 z-40 pointer-events-none select-none">
@@ -22,30 +16,24 @@ const BookMyShowDangler = () => {
       {/* Card swings from top */}
       <div className="origin-top animate-swing pointer-events-auto">
         <a
-          href={eventUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Book workshop on BookMyShow - 3rd May at Hyatt"
-          className="mt-1 block w-[170px] md:w-[200px] bg-card border border-border rounded-md shadow-2xl overflow-hidden hover:scale-105 transition-transform duration-300"
+          href={`tel:+91${phone}`}
+          aria-label="Book your photographer in one call"
+          className="mt-1 block w-[180px] md:w-[210px] bg-card border border-border rounded-md shadow-2xl overflow-hidden hover:scale-105 transition-transform duration-300"
         >
           <div className="bg-[hsl(var(--primary))] text-primary-foreground px-3 py-1.5 text-[10px] font-bold tracking-[0.15em] uppercase flex items-center justify-between">
-            <span>BookMyShow</span>
+            <span>bookyourshow now</span>
             <span className="text-[9px] opacity-80">LIVE</span>
           </div>
           <div className="p-3">
-            <p className="font-display text-sm md:text-base leading-tight text-foreground mb-2">
-              Photography Workshop
+            <p className="font-display text-sm md:text-[15px] leading-tight text-foreground mb-2">
+              Book your photographer in one call
             </p>
-            <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground mb-1">
-              <Calendar className="w-3 h-3 text-primary" />
-              <span className="font-medium">3rd May</span>
-            </div>
-            <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground mb-2.5">
-              <MapPin className="w-3 h-3 text-primary" />
-              <span>Hyatt, Bangalore</span>
+            <div className="flex items-center gap-1.5 text-[12px] text-foreground mb-2.5">
+              <Phone className="w-3.5 h-3.5 text-primary" />
+              <span className="font-semibold tracking-wide">+91 {phone}</span>
             </div>
             <div className="bg-primary/10 text-primary text-[10px] font-semibold tracking-wide uppercase text-center py-1.5 rounded-sm">
-              Book Tickets →
+              Call Now →
             </div>
           </div>
         </a>
