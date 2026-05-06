@@ -25,7 +25,7 @@ const BookMyShowDangler = () => {
             <span className="text-[9px] opacity-80">LIVE</span>
           </div>
           <div className="p-3">
-            <p className="font-display text-sm md:text-[15px] leading-tight text-foreground mb-2">
+            <p className="font-display text-sm md:text-[15px] leading-tight text-foreground mb-2 text-center">
               Your search ends here
             </p>
             <div className="flex items-center justify-center gap-1.5 text-[12px] text-foreground mb-2.5">
