@@ -1,7 +1,7 @@
 import { Phone } from "lucide-react";
 
 const BookMyShowDangler = () => {
-  const phone = "9019766511";
+  const phone = "9606766511";
 
   return (
     <div className="fixed top-16 right-6 md:right-24 z-40 pointer-events-none select-none">
